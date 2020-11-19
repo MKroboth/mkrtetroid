@@ -65,7 +65,7 @@ void draw_tetrimino(unsigned short tetrimino, unsigned int x_offset, unsigned in
     }
 }
 
-int run() {
+int simple_show_pieces_run() {
     unsigned char input = read_inputs();
     draw_tetrimino(tetriminos[TETRIMINO_I], 2, 10);
     draw_tetrimino(tetriminos[TETRIMINO_J], 6, 10);
@@ -75,6 +75,10 @@ int run() {
     draw_tetrimino(tetriminos[TETRIMINO_T], 12, 20);
     draw_tetrimino(tetriminos[TETRIMINO_L], 12, 10);
     return (input & 0b10000000u) == 0; // Check if high bit is set.
+}
+
+int run() {
+    return simple_show_pieces_run();
 }
 
 int main() {
