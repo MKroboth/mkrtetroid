@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - run: apt-get install libgtest-devel
     - uses: actions/checkout@v2
 
     - name: Create Build Environment
