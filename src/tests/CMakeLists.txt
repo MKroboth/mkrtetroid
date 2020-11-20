@@ -42,5 +42,5 @@ add_executable(mkr_tetroid_UnitTests
 )
 include_directories(..)
 
-target_link_libraries(mkr_tetroid_UnitTests PUBLIC curses gtest_main)
+target_link_libraries(mkr_tetroid_UnitTests PUBLIC curses gtest gtest_main)
 add_test(mkr_tetroid_UnitTests NAME runUnitTests COMMAND runUnitTests)
