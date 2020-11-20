@@ -17,53 +17,8 @@
 #include <stdlib.h>
 #include "mkr_tetroid.h"
 
-enum Tetrimino {
-    TETRIMINO_I = 0,
-    TETRIMINO_J,
-    TETRIMINO_L,
-    TETRIMINO_Q,
-    TETRIMINO_S,
-    TETRIMINO_T,
-    TETRIMINO_Z
-};
-unsigned short tetriminos[] = {
-   /*
-    * A Tetrimino is defined by a byte,
-    * the upper nibble represents the upper row
-    * and the lower nibble represents the lower row.
-    */
-   0b000100001111, // I
-   0b001010001110, // J
-   0b001100010111, // L
-   0b010000110011, // sQuare
-   0b010100110110, // S
-   0b011000100111, // T
-   0b011111000110, // Z
-};
+#include "mkr_tetroid_tetrimino.h"
 
-
-#define GET_NTH_BIT(byte, idx) (byte >> idx) & 1
-
-void draw_tetrimino(unsigned short tetrimino, unsigned int x_offset, unsigned int y_offset) {
-    unsigned int x;
-    unsigned int y;
-    unsigned char row;
-    unsigned char bit;
-    unsigned char attrib;
-
-    attrib = tetrimino >> 8U;
-
-
-    for(y = 0; y < 2; ++y) {
-	for (x = 0 ; x < 4 ; ++x) {
-	    bit = GET_NTH_BIT(tetrimino, (y * 4 + x));
-
-	    if(bit == 1) {
-		print_char(y+y_offset, x+x_offset, 'X', attrib);
-	    }
-	}
-    }
-}
 
 int simple_show_pieces_run() {
     unsigned char input = read_inputs();
