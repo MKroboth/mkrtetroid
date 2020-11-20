@@ -3,7 +3,7 @@
 //
 
 #include "gtest/gtest.h"
-#include "mkr_tetroid_utils.h"
+#include "../mkr_tetroid_utils.h"
 
 TEST(getbit, check01010101) {
     unsigned char bits[] =
