@@ -41,9 +41,10 @@ include_directories("${gtest_SOURCE_DIR}/include")
 
 add_executable(mkr_tetroid_UnitTests
       ${MKR_TETROID_SOURCES}
-        )
+        src/tests/getbit_test.cxx)
 
-target_link_libraries(mkr_tetroid_UnitTests curses gtest gtest_main)
+
+target_link_libraries(mkr_tetroid_UnitTests curses gtest_main)
 add_test(mkr_tetroid_UnitTests NAME runUnitTests COMMAND runUnitTests)
 
 
