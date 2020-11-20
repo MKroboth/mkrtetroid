@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.17)
 project(mkr_tetroid C CXX)
 
 
-add_executable(mkr_tetroid src/main.c src/mkr_tetroid.h src/refresh_screen.c src/clear_screen.c src/initialize_screen.c src/finalize_screen.c src/print_char.c src/mkr_tetroid_buffer.h src/buffer_definition.c src/read_inputs.c src/mkr_tetroid_console_out.h src/mkr_tetroid_tetrimino.h src/draw_tetrimino.c src/tests/getbit_test.cxx src/mkr_tetroid_utils.h)
+set(MKR_TETROID_SOURCES src/mkr_tetroid.h src/refresh_screen.c src/clear_screen.c src/initialize_screen.c src/finalize_screen.c src/print_char.c src/mkr_tetroid_buffer.h src/buffer_definition.c src/read_inputs.c src/mkr_tetroid_console_out.h src/mkr_tetroid_tetrimino.h src/draw_tetrimino.c src/tests/getbit_test.cxx src/mkr_tetroid_utils.h)
+add_executable(mkr_tetroid src/main.c ${MKR_TETROID_SOURCES})
 set(CURSES_NEED_NCURSES FALSE)
 find_package(Curses REQUIRED)
 
@@ -38,5 +39,11 @@ add_subdirectory(${CMAKE_CURRENT_BINARY_DIR}/googletest-src
 include_directories("${gtest_SOURCE_DIR}/include")
 
 
-add_subdirectory(src/tests)
+add_executable(mkr_tetroid_UnitTests
+      ${MKR_TETROID_SOURCES}
+        )
+
+target_link_libraries(mkr_tetroid_UnitTests curses gtest gtest_main)
+add_test(mkr_tetroid_UnitTests NAME runUnitTests COMMAND runUnitTests)
+
 
