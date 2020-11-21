@@ -17,7 +17,7 @@
 
 #ifndef MKR_TETROID_TETRIMINO_H
 #define MKR_TETROID_TETRIMINO_H
-
+#include "mkr_tetroid.h"
 enum Tetrimino {
     TETRIMINO_I = 0,
     TETRIMINO_J,
@@ -28,7 +28,9 @@ enum Tetrimino {
     TETRIMINO_Z
 };
 
-unsigned int const tetriminos[] = {
+typedef unsigned int tetrimino_bytes;
+
+tetrimino_bytes const tetriminos[] = {
 	/*
 	 * A Tetrimino is defined by a byte,
 	 * the upper nibble represents the upper row
@@ -45,6 +47,6 @@ unsigned int const tetriminos[] = {
 
 #define GET_TETRIMINO_ATTRIB(tetrimino) ((tetrimino) >> 16U)
 
-void draw_tetrimino(unsigned short tetrimino, unsigned int x_offset, unsigned int y_offset);
+void draw_tetrimino(MkrTetroidGame* game, tetrimino_bytes tetrimino, unsigned int x_offset, unsigned int y_offset);
 
 #endif //_MKR_TETROID_TETRIMINO_H

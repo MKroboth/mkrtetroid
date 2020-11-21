@@ -3,8 +3,8 @@
 //
 
 #include "mkr_tetroid.h"
-#include "mkr_tetroid_tetrimino.h"
 #include "mkr_tetroid_utils.h"
+#include "mkr_tetroid_tetrimino.h"
 
 #define BITS_PER_ROW (4U)
 #define ROWS_PER_TETRIMINO (4U)
@@ -12,7 +12,7 @@
 
 
 
-void draw_tetrimino(unsigned short tetrimino, unsigned int x_offset, unsigned int y_offset) {
+void draw_tetrimino(MkrTetroidGame* game, tetrimino_bytes tetrimino, unsigned int x_offset, unsigned int y_offset) {
     unsigned int x;
     unsigned int y;
     unsigned char bit;
@@ -26,7 +26,7 @@ void draw_tetrimino(unsigned short tetrimino, unsigned int x_offset, unsigned in
 	    bit = GET_NTH_BIT(tetrimino, (y * BITS_PER_ROW + x));
 
 	    if(bit == 1) {
-		print_char(y+y_offset, x+x_offset, 'X', attrib);
+		game->print_char(y+y_offset, x+x_offset, 'X', attrib);
 	    }
 	}
     }

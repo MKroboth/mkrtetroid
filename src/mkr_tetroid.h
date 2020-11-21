@@ -20,29 +20,16 @@
 #define BUFFER_WIDTH 80
 #define BUFFER_HEIGHT 24
 
-unsigned char read_inputs();
+typedef struct TetroidGame {
+    unsigned char (*read_inputs)();
+    int (*initialize_screen)();
+    void (*finalize_screen)();
+    void (*refresh_screen)();
+    void (*clear_screen)();
+    void (*print_char)(int x, int y, char c, char attrib);
+} MkrTetroidGame;
 
-int initialize_screen();
 
-void finalize_screen();
-
-/**
- * Swaps the screen buffer
- */
-void refresh_screen();
-
-/**
- * Clears the screen buffer
- */
-void clear_screen();
-
-/**
- * Prints a char to the screen buffer
- * \param x coordinate
- * \param y coordinate
- * \param c character
- * \param attrib character attribute
- */
-void print_char(long x, long y, char c, unsigned char attrib);
+MkrTetroidGame MkrTetroidGame_new();
 
 #endif

@@ -14,6 +14,7 @@
    You should have received a copy of the GNU General Public License
    along with mkr-tetroid.  If not, see <https://www.gnu.org/licenses/>.
  */
+#include "mkr_tetroid.h"
 #include "mkr_tetroid_console_out.h"
 void finalize_screen() {
     MKRT_END();
