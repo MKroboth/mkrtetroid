@@ -5,7 +5,7 @@
 #include <catch2/catch.hpp>
 #include "../mkr_tetroid_utils.h"
 
-TEST_CASE("getbit", "") {
+TEST_CASE("getbit") {
     SECTION("check01010100") {
 	unsigned char bits[] =
 		{0, 1, 0, 1, 0, 1, 0, 1};
