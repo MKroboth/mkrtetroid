@@ -29,7 +29,7 @@ set(MKR_TETROID_SOURCES
 set(MKR_TETROID_TEST_SOURCES
         src/tests/test_config.cxx
         src/tests/getbit_test.cxx
-        src/tests/get_tetrimino_attrib_test.cxx)
+        src/tests/get_tetrimino_attrib_test.cxx src/tests/draw_tetrimino_test.cxx src/tests/mkr_tetroid_game_stub.hxx)
 
 add_executable(mkr_tetroid src/main.c ${MKR_TETROID_SOURCES})
 set(CURSES_NEED_NCURSES FALSE)

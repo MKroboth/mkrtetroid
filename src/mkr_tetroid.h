@@ -16,6 +16,11 @@
  */
 #ifndef MKR_TETROID_H
 #define MKR_TETROID_H
+#ifdef __cplusplus
+#define EXTERN_C extern "C"
+#else
+#define EXTERN_C
+#endif
 
 #define BUFFER_WIDTH 80
 #define BUFFER_HEIGHT 24
@@ -30,6 +35,6 @@ typedef struct TetroidGame {
 } MkrTetroidGame;
 
 
-MkrTetroidGame MkrTetroidGame_new();
+EXTERN_C MkrTetroidGame MkrTetroidGame_new();
 
 #endif

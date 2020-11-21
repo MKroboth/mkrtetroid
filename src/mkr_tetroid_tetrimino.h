@@ -17,6 +17,12 @@
 
 #ifndef MKR_TETROID_TETRIMINO_H
 #define MKR_TETROID_TETRIMINO_H
+#ifdef __cplusplus
+#define EXTERN_C extern "C"
+#else
+#define EXTERN_C
+#endif
+
 #include "mkr_tetroid.h"
 enum Tetrimino {
     TETRIMINO_I = 0,
@@ -47,6 +53,6 @@ tetrimino_bytes const tetriminos[] = {
 
 #define GET_TETRIMINO_ATTRIB(tetrimino) ((tetrimino) >> 16U)
 
-void draw_tetrimino(MkrTetroidGame* game, tetrimino_bytes tetrimino, unsigned int x_offset, unsigned int y_offset);
+EXTERN_C void draw_tetrimino(MkrTetroidGame* game, tetrimino_bytes tetrimino, unsigned int x_offset, unsigned int y_offset);
 
 #endif //_MKR_TETROID_TETRIMINO_H
