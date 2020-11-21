@@ -54,5 +54,8 @@ tetrimino_bytes const tetriminos[] = {
 #define GET_TETRIMINO_ATTRIB(tetrimino) ((tetrimino) >> 16U)
 
 EXTERN_C void draw_tetrimino(MkrTetroidGame* game, tetrimino_bytes tetrimino, unsigned int x_offset, unsigned int y_offset);
+EXTERN_C tetrimino_bytes tetrimino_rotate_clockwise(tetrimino_bytes);
+EXTERN_C tetrimino_bytes tetrimino_rotate_counterclockwise(tetrimino_bytes);
+
 
 #endif //_MKR_TETROID_TETRIMINO_H
