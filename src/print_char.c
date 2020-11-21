@@ -16,7 +16,7 @@
  */
 #include "mkr_tetroid_buffer.h"
 #include "mkr_tetroid.h"
-void print_char(int x, int y, char c, char attrib) {
+void print_char(long x, long y, char c, unsigned char attrib) {
     if(c != 0) {
 	buffer[x][y].attrib = attrib;
 	buffer[x][y].content = c;

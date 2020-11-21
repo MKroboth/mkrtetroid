@@ -36,13 +36,13 @@ tetrimino_bytes const tetriminos[] = {
 	 * the upper nibble represents the upper row
 	 * and the lower nibble represents the lower row.
 	 */
-	0b00010000000000001111, // I
-	0b00100000000010001110, // J
-	0b00110000000000010111, // L
-	0b01000000000000110011, // sQuare
-	0b01010000000000110110, // S
-	0b01100000000000100111, // T
-	0b01110000000011000110, // Z
+	0b00010000000000001111u, // I
+	0b00100000000010001110u, // J
+	0b00110000000000010111u, // L
+	0b01000000000000110011u, // sQuare
+	0b01010000000000110110u, // S
+	0b01100000000000100111u, // T
+	0b01110000000011000110u, // Z
 };
 
 #define GET_TETRIMINO_ATTRIB(tetrimino) ((tetrimino) >> 16U)

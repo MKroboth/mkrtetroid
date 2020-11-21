@@ -26,7 +26,7 @@ void clear_screen();
  * \param c character
  * \param attrib character attribute
  */
-void print_char( int x, int y, char c, char attrib);
+void print_char(long x, long y, char c, unsigned char attrib);
 
 MkrTetroidGame MkrTetroidGame_new() {
     MkrTetroidGame result;

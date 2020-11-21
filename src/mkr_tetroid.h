@@ -26,7 +26,7 @@ typedef struct TetroidGame {
     void (*finalize_screen)();
     void (*refresh_screen)();
     void (*clear_screen)();
-    void (*print_char)(int x, int y, char c, char attrib);
+    void (*print_char)(long x, long y, char c, unsigned char attrib);
 } MkrTetroidGame;
 
 
