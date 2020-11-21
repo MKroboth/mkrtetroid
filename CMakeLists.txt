@@ -44,7 +44,7 @@ add_executable(mkr_tetroid_UnitTests
         src/tests/getbit_test.cxx)
 
 
-target_link_libraries(mkr_tetroid_UnitTests curses gtest_main)
+target_link_libraries(mkr_tetroid_UnitTests gtest gtest_main curses)
 add_test(mkr_tetroid_UnitTests NAME runUnitTests COMMAND runUnitTests)
 
 
