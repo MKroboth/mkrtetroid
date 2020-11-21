@@ -19,6 +19,7 @@
    You should have received a copy of the GNU General Public License
    along with mkr-tetroid.  If not, see <https://www.gnu.org/licenses/>.
  */
+#include "mkr_tetroid.h"
 int initialize_screen() {
     MKRT_INIT();
     if(MKRT_HAS_COLORS() == FALSE) {

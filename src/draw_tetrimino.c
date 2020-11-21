@@ -4,8 +4,9 @@
 
 #include "mkr_tetroid.h"
 #include "mkr_tetroid_utils.h"
+#include "mkr_tetroid_tetrimino.h"
 
-void draw_tetrimino(unsigned short tetrimino, unsigned int x_offset, unsigned int y_offset) {
+void draw_tetrimino(MkrTetroidGame* game, tetrimino_bytes tetrimino, unsigned int x_offset, unsigned int y_offset) {
     unsigned int x;
     unsigned int y;
     unsigned char row;
@@ -20,7 +21,7 @@ void draw_tetrimino(unsigned short tetrimino, unsigned int x_offset, unsigned in
 	    bit = GET_NTH_BIT(tetrimino, (y * 4 + x));
 
 	    if(bit == 1) {
-		print_char(y+y_offset, x+x_offset, 'X', attrib);
+		game->print_char(y+y_offset, x+x_offset, 'X', attrib);
 	    }
 	}
     }

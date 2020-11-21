@@ -20,36 +20,37 @@
 #include "mkr_tetroid_tetrimino.h"
 
 
-int simple_show_pieces_run() {
-    unsigned char input = read_inputs();
-    draw_tetrimino(tetriminos[TETRIMINO_I], 2, 10);
-    draw_tetrimino(tetriminos[TETRIMINO_J], 6, 10);
-    draw_tetrimino(tetriminos[TETRIMINO_Q], 8, 14);
-    draw_tetrimino(tetriminos[TETRIMINO_S], 2, 20);
-    draw_tetrimino(tetriminos[TETRIMINO_Z], 6, 20);
-    draw_tetrimino(tetriminos[TETRIMINO_T], 12, 20);
-    draw_tetrimino(tetriminos[TETRIMINO_L], 12, 10);
+int simple_show_pieces_run(MkrTetroidGame* game) {
+    unsigned char input = game->read_inputs();
+    draw_tetrimino(game, tetriminos[TETRIMINO_I], 2, 10);
+    draw_tetrimino(game, tetriminos[TETRIMINO_J], 6, 10);
+    draw_tetrimino(game, tetriminos[TETRIMINO_Q], 8, 14);
+    draw_tetrimino(game, tetriminos[TETRIMINO_S], 2, 20);
+    draw_tetrimino(game, tetriminos[TETRIMINO_Z], 6, 20);
+    draw_tetrimino(game, tetriminos[TETRIMINO_T], 12, 20);
+    draw_tetrimino(game, tetriminos[TETRIMINO_L], 12, 10);
     return (input & 0b10000000u) == 0; // Check if high bit is set.
 }
 
-int run() {
-    return simple_show_pieces_run();
+int run(MkrTetroidGame* game) {
+    return simple_show_pieces_run(game);
 }
 
 int main() {
     int is_alive;
+    MkrTetroidGame game = MkrTetroidGame_new();
 
-    if(!initialize_screen()) {
+    if(!game.initialize_screen(&game)) {
         // Our screen is not capable for showing the buffer.
 
         return 1;
     }
-    atexit(finalize_screen);
+    atexit(game.finalize_screen);
 
     do {
-	clear_screen();
-	is_alive = run();
-	refresh_screen();
+	game.clear_screen();
+	is_alive = run(&game);
+	game.refresh_screen();
     } while (is_alive);
     return 0;
 }

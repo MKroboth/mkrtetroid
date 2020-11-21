@@ -14,7 +14,7 @@
    You should have received a copy of the GNU General Public License
    along with mkr-tetroid.  If not, see <https://www.gnu.org/licenses/>.
  */
-
+#include "mkr_tetroid.h"
 unsigned char read_inputs() {
     return 0;
 }

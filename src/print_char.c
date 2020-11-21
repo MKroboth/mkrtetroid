@@ -15,6 +15,7 @@
    along with mkr-tetroid.  If not, see <https://www.gnu.org/licenses/>.
  */
 #include "mkr_tetroid_buffer.h"
+#include "mkr_tetroid.h"
 void print_char(int x, int y, char c, char attrib) {
     if(c != 0) {
 	buffer[x][y].attrib = attrib;

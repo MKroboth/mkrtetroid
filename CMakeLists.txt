@@ -25,7 +25,7 @@ set(MKR_TETROID_SOURCES
         src/mkr_tetroid_console_out.h
         src/mkr_tetroid_tetrimino.h
         src/draw_tetrimino.c
-        src/mkr_tetroid_utils.h)
+        src/mkr_tetroid_utils.h src/mkr_tetroid.c)
 set(MKR_TETROID_TEST_SOURCES
         src/tests/test_config.cxx
         src/tests/getbit_test.cxx)
