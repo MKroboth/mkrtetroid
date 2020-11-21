@@ -21,7 +21,7 @@
 #include "mkr_tetroid.h"
 
 typedef struct {
-    char attrib;
+    unsigned char attrib;
     char content;
 } __attribute__((packed)) buffer_content;
 

@@ -28,7 +28,8 @@ set(MKR_TETROID_SOURCES
         src/mkr_tetroid_utils.h)
 set(MKR_TETROID_TEST_SOURCES
         src/tests/test_config.cxx
-        src/tests/getbit_test.cxx)
+        src/tests/getbit_test.cxx
+        src/tests/get_tetrimino_attrib_test.cxx)
 
 add_executable(mkr_tetroid src/main.c ${MKR_TETROID_SOURCES})
 set(CURSES_NEED_NCURSES FALSE)

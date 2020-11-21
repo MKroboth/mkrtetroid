@@ -28,20 +28,22 @@ enum Tetrimino {
     TETRIMINO_Z
 };
 
-unsigned short const tetriminos[] = {
+unsigned int const tetriminos[] = {
 	/*
 	 * A Tetrimino is defined by a byte,
 	 * the upper nibble represents the upper row
 	 * and the lower nibble represents the lower row.
 	 */
-	0b000100001111, // I
-	0b001010001110, // J
-	0b001100010111, // L
-	0b010000110011, // sQuare
-	0b010100110110, // S
-	0b011000100111, // T
-	0b011111000110, // Z
+	0b00010000000000001111, // I
+	0b00100000000010001110, // J
+	0b00110000000000010111, // L
+	0b01000000000000110011, // sQuare
+	0b01010000000000110110, // S
+	0b01100000000000100111, // T
+	0b01110000000011000110, // Z
 };
+
+#define GET_TETRIMINO_ATTRIB(tetrimino) ((tetrimino) >> 16U)
 
 void draw_tetrimino(unsigned short tetrimino, unsigned int x_offset, unsigned int y_offset);
 
